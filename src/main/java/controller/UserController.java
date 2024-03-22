@@ -12,20 +12,17 @@ import service.UserService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/users/api")
+@RequestMapping("/users")
 public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody UserRegisterDto userRegisterDto){
-         userService.register();
-         return new ResponseEntity<>("User registered successfully..", HttpStatus.CREATED)
+         userService.register(userRegisterDto);
+         return new ResponseEntity<>("User registered successfully..", HttpStatus.CREATED);
     }
 
 

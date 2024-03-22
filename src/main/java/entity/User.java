@@ -16,6 +16,6 @@ public class User {
     Integer id;
      String userName;
      String password;
-    String repeatPassword;
+     String repeatPassword;
      String email;
 }
